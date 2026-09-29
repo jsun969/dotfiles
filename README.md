@@ -2,5 +2,5 @@
 
 ## Soft link
 
-`nvim` -> `~/.config/nvim`
-`ghostty` -> `~/.config/ghostty`
+- `nvim` -> `~/.config/nvim`
+- `ghostty` -> `~/.config/ghostty`
