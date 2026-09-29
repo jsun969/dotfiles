@@ -1,0 +1,3 @@
+## MacOS
+
+`~/.config/nvim`
