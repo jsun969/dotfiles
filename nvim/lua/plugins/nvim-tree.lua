@@ -1,35 +1,42 @@
 return {
-  'nvim-tree/nvim-tree.lua',
-  lazy = false,
-  keys = {
-    { "<leader>e", "<cmd>NvimTreeToggle<cr>", desc = "Toggle file tree" },
-  },
-  dependencies = {
-    'nvim-tree/nvim-web-devicons',
-  },
-  init = function()
-    vim.g.loaded_netrw = 1
-    vim.g.loaded_netrwPlugin = 1
-  end,
-  opts = {
-    filters = {
-      -- ignore .git folder and .DS_Store
-      custom = { "^\\.git$", "^\\.DS_Store$" },
-    },
-    renderer = {
-      icons = {
-        glyphs = {
-          git = {
-            unstaged = "M",
-            staged = "A",
-            unmerged = "U",
-            renamed = "R",
-            untracked = "??",
-            deleted = "D",
-            ignored = "!",
-          },
-        },
-      },
-    },
-  },
+	"nvim-tree/nvim-tree.lua",
+	lazy = false,
+	keys = {
+		{ "<leader>e", "<cmd>NvimTreeToggle<cr>", desc = "Toggle file tree" },
+	},
+	dependencies = {
+		"nvim-tree/nvim-web-devicons",
+	},
+	init = function()
+		vim.g.loaded_netrw = 1
+		vim.g.loaded_netrwPlugin = 1
+	end,
+	opts = {
+		filters = {
+			-- ignore .git folder and .DS_Store
+			custom = { "^\\.git$", "^\\.DS_Store$" },
+		},
+		modified = {
+			enable = true,
+			show_on_dirs = true,
+		},
+		renderer = {
+			icons = {
+				show = {
+					modified = true,
+				},
+				glyphs = {
+					git = {
+						unstaged = "M",
+						staged = "A",
+						unmerged = "U",
+						renamed = "R",
+						untracked = "??",
+						deleted = "D",
+						ignored = "!",
+					},
+				},
+			},
+		},
+	},
 }
