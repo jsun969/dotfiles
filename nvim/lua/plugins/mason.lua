@@ -1,5 +1,4 @@
 return {
-	-- language servers: installs and auto-enables them
 	{
 		"mason-org/mason-lspconfig.nvim",
 		dependencies = {
@@ -9,11 +8,8 @@ return {
 		opts = {
 			-- lspconfig server names, not mason names
 			ensure_installed = { "lua_ls" },
-			-- automatic_enable enables every Mason-installed package that has a
-			-- matching lspconfig server. nvim-lspconfig now ships `stylua`
-			-- (cmd = stylua --lsp), so installing the formatter via
-			-- mason-tool-installer below would also attach it as a second Lua
-			-- server, duplicating what conform.nvim already does.
+			-- nvim-lspconfig also ships a `stylua` server; auto-enable would attach it
+			-- next to conform's CLI, so format via conform only.
 			automatic_enable = {
 				exclude = { "stylua" },
 			},
