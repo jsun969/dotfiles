@@ -4,3 +4,6 @@ git:
       pager: delta --dark --paging=never --side-by-side --tabs=4
 gui:
   nerdFontsVersion: "3"
+
+os:
+  editPreset: "nvim"
