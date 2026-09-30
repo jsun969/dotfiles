@@ -12,6 +12,12 @@ return {
 		vim.g.loaded_netrwPlugin = 1
 	end,
 	opts = {
+		-- Expand the tree to the focused file on BufEnter (e.g. after fzf-lua opens it).
+		update_focused_file = {
+			enable = true,
+			-- Keep the tree root at cwd; do not jump it to the file's directory.
+			update_root = { enable = false },
+		},
 		filters = {
 			-- ignore .git folder and .DS_Store
 			custom = { "^\\.git$", "^\\.DS_Store$" },
