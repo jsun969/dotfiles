@@ -1,6 +1,6 @@
-# Personal Dot Files
+# Justin's Dot Files
 
-## Soft link
+## Soft link (MacOS)
 
 - `nvim` -> `~/.config/nvim`
 - `ghostty` -> `~/.config/ghostty`
