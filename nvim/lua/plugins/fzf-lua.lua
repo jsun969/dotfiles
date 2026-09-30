@@ -11,6 +11,8 @@ return {
 			winopts = { width = 0.8, height = 0.8, row = 0.5, col = 0.5 },
 			files = {
 				cwd_prompt = false,
+				-- Git status indicators (M/A/D/R/?? ...) in front of each path.
+				git_icons = true,
 				actions = {
 					["alt-i"] = { actions.toggle_ignore },
 					["alt-h"] = { actions.toggle_hidden },
