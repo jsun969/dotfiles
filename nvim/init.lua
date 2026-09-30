@@ -4,3 +4,5 @@ vim.opt.relativenumber = true
 vim.opt.clipboard = "unnamedplus"
 
 vim.termguicolors = true
+
+require("config.lazy")
