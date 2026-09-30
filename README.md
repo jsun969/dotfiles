@@ -6,15 +6,13 @@
 - `ghostty` -> `~/.config/ghostty`
 - `lazygit/config.yml` -> `~/Library/Application Support/lazygit/config.yml`
 
-## Prerequisites (MacOS)
+## Prerequisites
 
-`nvim` needs **Neovim >= 0.12** and, for treesitter parser builds:
+### Neovim
+
+Requires **Neovim >= 0.12**.
 
 ```
+# build treesitter parsers
 brew install tree-sitter-cli
 ```
-
-Note `tree-sitter` (the library) is a different formula than `tree-sitter-cli`
-(the parser generator). nvim-treesitter's `main` branch shells out to
-`tree-sitter build` for every install, so only the CLI works. A C compiler must
-also be on PATH (Xcode CLT `cc` is enough).
