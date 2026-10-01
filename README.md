@@ -12,7 +12,7 @@
 
 Requires **Neovim >= 0.12**.
 
-```
+```sh
 # build treesitter parsers
 brew install tree-sitter-cli
 
