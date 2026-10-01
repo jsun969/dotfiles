@@ -1,3 +1,6 @@
+-- Fuzzy picker for files, grep, buffers, git, LSP symbols.
+
+
 return {
 	"ibhagwan/fzf-lua",
 	dependencies = { "nvim-tree/nvim-web-devicons" },

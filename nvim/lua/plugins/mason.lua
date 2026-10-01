@@ -1,3 +1,6 @@
+-- Installs LSP servers (lua_ls, ts_ls, eslint) and CLI tools (stylua).
+
+
 return {
 	{
 		"mason-org/mason-lspconfig.nvim",

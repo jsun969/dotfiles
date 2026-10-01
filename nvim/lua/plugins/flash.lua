@@ -1,3 +1,6 @@
+-- Jump to any location on screen by labels.
+
+
 return {
 	"folke/flash.nvim",
 	event = "VeryLazy",

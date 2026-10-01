@@ -1,3 +1,6 @@
+-- Renders markdown in the buffer; the cursor line shows raw source.
+
+
 return {
 	"OXY2DEV/markview.nvim",
 	-- Upstream: do not lazy load it, it already attaches per buffer and lazy loading

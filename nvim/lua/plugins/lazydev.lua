@@ -1,3 +1,6 @@
+-- Points LuaLS at luv + Neovim runtime types for Lua buffers.
+
+
 return {
 	"folke/lazydev.nvim",
 	-- Only needed for Lua buffers; it points LuaLS at the right workspace libraries.

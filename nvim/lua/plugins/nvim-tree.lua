@@ -1,3 +1,6 @@
+-- File tree sidebar with git status and modified markers.
+
+
 return {
 	"nvim-tree/nvim-tree.lua",
 	lazy = false,

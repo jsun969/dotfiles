@@ -1,3 +1,6 @@
+-- Statusline: mode, branch, diagnostics, encoding/filetype, progress, location.
+
+
 return {
 	"nvim-lualine/lualine.nvim",
 	dependencies = { "nvim-tree/nvim-web-devicons" },

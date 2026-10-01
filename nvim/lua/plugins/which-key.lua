@@ -1,3 +1,6 @@
+-- Popup hints for pending keymaps.
+
+
 return {
 	"folke/which-key.nvim",
 	event = "VeryLazy",

@@ -1,3 +1,6 @@
+-- Format current buffer. <leader>f (normal/visual). stylua for lua.
+
+
 return {
 	"stevearc/conform.nvim",
 	keys = {

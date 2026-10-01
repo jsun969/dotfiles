@@ -1,3 +1,6 @@
+-- Completion menu (LSP/buffer/path/snippets) + snippets.
+
+
 return {
 	"saghen/blink.cmp",
 	event = { "InsertEnter", "CmdlineEnter" },

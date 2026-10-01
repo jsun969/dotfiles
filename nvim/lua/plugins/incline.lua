@@ -1,3 +1,6 @@
+-- Floating filename (filetype icon + git counts) in each window's top-right.
+
+
 return {
 	"b0o/incline.nvim",
 	event = "VeryLazy",

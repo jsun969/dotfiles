@@ -1,3 +1,6 @@
+-- Colorscheme. Loaded first so everything else uses its highlights.
+
+
 return {
 	"catppuccin/nvim",
 	name = "catppuccin",

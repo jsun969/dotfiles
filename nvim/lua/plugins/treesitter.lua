@@ -1,3 +1,6 @@
+-- Installs parsers and turns on syntax highlighting per filetype.
+
+
 local installed = {
 	"lua",
 	"vim",

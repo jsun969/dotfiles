@@ -1,3 +1,6 @@
+-- Git hunk signs, inline line blame, stage/reset hunks.
+
+
 return {
 	"lewis6991/gitsigns.nvim",
 	event = { "BufReadPre", "BufNewFile" },
