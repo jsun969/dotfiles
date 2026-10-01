@@ -60,3 +60,6 @@ vim.diagnostic.config({
 require("config.keymaps")
 
 require("config.lazy")
+
+-- After lazy.nvim, so nvim-lspconfig's `lsp/` configs are on the runtimepath.
+require("config.lsp")

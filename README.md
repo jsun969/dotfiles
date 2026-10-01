@@ -16,6 +16,7 @@ Requires **Neovim >= 0.12**.
 # build treesitter parsers
 brew install tree-sitter-cli
 
+# C/C++ language server: clangd (Xcode command line tools ship it; `brew install llvm` also works)
 # fzf-lua deps (delta is also the lazygit pager, chafa is optional image preview)
 brew install fzf ripgrep fd delta chafa
 ```
