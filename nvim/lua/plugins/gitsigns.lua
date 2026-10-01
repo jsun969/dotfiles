@@ -3,5 +3,62 @@ return {
 	event = { "BufReadPre", "BufNewFile" },
 	opts = {
 		signcolumn = true,
+		-- Blame of the cursor line, drawn as virtual text at end of line
+		-- (current_line_blame_opts.virt_text_pos defaults to "eol").
+		current_line_blame = true,
+		current_line_blame_opts = {
+			-- Default is 1000 ms; lower so the blame shows up as soon as you settle.
+			delay = 150,
+		},
+		on_attach = function(bufnr)
+			-- gitsigns ships no mappings of its own.
+			local gs = require("gitsigns")
+			local function map(mode, lhs, rhs, desc)
+				vim.keymap.set(mode, lhs, rhs, { buffer = bufnr, desc = desc })
+			end
+
+			-- Hunk navigation.
+			map("n", "]c", function()
+				if vim.wo.diff then
+					vim.cmd.normal({ "]c", bang = true })
+				else
+					gs.nav_hunk("next")
+				end
+			end, "Next git hunk")
+			map("n", "[c", function()
+				if vim.wo.diff then
+					vim.cmd.normal({ "[c", bang = true })
+				else
+					gs.nav_hunk("prev")
+				end
+			end, "Previous git hunk")
+
+			-- Stage / reset, normal and visual (line range) variants.
+			map("n", "<leader>hs", gs.stage_hunk, "Stage hunk")
+			map("v", "<leader>hs", function()
+				gs.stage_hunk({ vim.fn.line("."), vim.fn.line("v") })
+			end, "Stage hunk (selection)")
+			map("n", "<leader>hr", gs.reset_hunk, "Reset hunk")
+			map("v", "<leader>hr", function()
+				gs.reset_hunk({ vim.fn.line("."), vim.fn.line("v") })
+			end, "Reset hunk (selection)")
+			map("n", "<leader>hu", gs.undo_stage_hunk, "Undo stage hunk")
+			map("n", "<leader>hS", gs.stage_buffer, "Stage buffer")
+			map("n", "<leader>hR", gs.reset_buffer, "Reset buffer")
+
+			-- Inspect.
+			map("n", "<leader>hp", gs.preview_hunk, "Preview hunk")
+			map("n", "<leader>hb", gs.blame_line, "Blame line")
+			map("n", "<leader>hd", gs.diffthis, "Diff this against index")
+			map("n", "<leader>hD", function()
+				gs.diffthis("~")
+			end, "Diff this against last commit")
+
+			-- Toggles.
+			map("n", "<leader>tb", gs.toggle_current_line_blame, "Toggle line blame")
+			map("n", "<leader>tw", gs.toggle_word_diff, "Toggle word diff")
+			map("n", "<leader>ts", gs.toggle_signs, "Toggle signs")
+			map("n", "<leader>td", gs.toggle_deleted, "Toggle deleted lines")
+		end,
 	},
 }
