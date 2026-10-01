@@ -16,6 +16,15 @@ return {
 	opts = {
 		formatters_by_ft = {
 			lua = { "stylua" },
+			-- prettier reads the project's .prettierrc* itself (conform resolves
+			-- node_modules/.bin/prettier first, then PATH, i.e. mason's bin).
+			javascript = { "prettier" },
+			javascriptreact = { "prettier" },
+			typescript = { "prettier" },
+			typescriptreact = { "prettier" },
+			vue = { "prettier" },
+			css = { "prettier" },
+			scss = { "prettier" },
 		},
 	},
 }
