@@ -16,6 +16,10 @@ return {
 	opts = {
 		formatters_by_ft = {
 			lua = { "stylua" },
+			-- clang-format reads .clang-format from the file's dir upwards, and
+			-- falls back to its LLVM style when there is none.
+			c = { "clang-format" },
+			cpp = { "clang-format" },
 			-- prettier reads the project's .prettierrc* itself (conform resolves
 			-- node_modules/.bin/prettier first, then PATH, i.e. mason's bin).
 			javascript = { "prettier" },
