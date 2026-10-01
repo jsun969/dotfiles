@@ -15,3 +15,7 @@ vim.keymap.set("n", "<C-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increa
 vim.keymap.set("n", "<leader>-", "<C-w>s", { desc = "Split window below" })
 vim.keymap.set("n", "<leader>|", "<C-w>v", { desc = "Split window right" })
 vim.keymap.set("n", "<leader>wd", "<C-w>c", { desc = "Delete window" })
+
+-- `jj` leaves insert mode (no reach for <Esc>); waits out 'timeoutlen' before
+-- inserting a literal "j", so a lone j is delayed by 300ms.
+vim.keymap.set("i", "jj", "<Esc>", { desc = "Exit insert mode" })
