@@ -1,6 +1,10 @@
 vim.opt.number = true
 vim.opt.relativenumber = true
 
+-- Highlight only the current line's number, not the whole line (CursorLineNr).
+vim.opt.cursorline = true
+vim.opt.cursorlineopt = "number"
+
 -- 24-bit color for the colorscheme (nvim auto-detects too, this is explicit).
 vim.opt.termguicolors = true
 
