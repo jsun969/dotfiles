@@ -9,6 +9,10 @@ local installed = {
 	"rust",
 	"markdown",
 	"diff",
+	-- javascript owns .js/.jsx/.jsx+react; tsx owns .tsx/react; typescript owns .ts
+	"javascript",
+	"typescript",
+	"tsx",
 }
 
 -- Installed for injections (markdown code fences, vim help); never owns a buffer.

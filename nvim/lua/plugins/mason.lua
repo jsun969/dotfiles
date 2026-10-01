@@ -7,7 +7,7 @@ return {
 		},
 		opts = {
 			-- lspconfig server names, not mason names
-			ensure_installed = { "lua_ls" },
+			ensure_installed = { "lua_ls", "ts_ls", "eslint" },
 			-- nvim-lspconfig also ships a `stylua` server; auto-enable would attach it
 			-- next to conform's CLI, so format via conform only.
 			automatic_enable = {
