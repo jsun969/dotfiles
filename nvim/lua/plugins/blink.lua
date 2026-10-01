@@ -30,6 +30,12 @@ return {
 				},
 			},
 		},
+		-- VS Code-like: docs panel beside the menu while navigating, plus
+		-- parameter hints. <C-b>/<C-f> scroll the docs, <C-k> toggles signature.
+		completion = {
+			documentation = { auto_show = true, auto_show_delay_ms = 150 },
+		},
+		signature = { enabled = true },
 		fuzzy = { implementation = "rust" },
 	},
 }
