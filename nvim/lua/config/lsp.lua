@@ -17,3 +17,21 @@ vim.lsp.config("clangd", {
 })
 
 vim.lsp.enable("clangd")
+
+-- nvim only ships the `gr*` LSP defaults, so hover and goto need keys. Buffer
+-- local, set on attach, so they never shadow `K`/`gd` in buffers without a server.
+vim.api.nvim_create_autocmd("LspAttach", {
+	callback = function(ev)
+		local function map(lhs, rhs, desc)
+			vim.keymap.set("n", lhs, rhs, { buffer = ev.buf, desc = desc })
+		end
+
+		map("K", vim.lsp.buf.hover, "Hover (full docs)")
+		map("gd", vim.lsp.buf.definition, "Goto definition")
+		map("gD", vim.lsp.buf.declaration, "Goto declaration")
+		map("gI", vim.lsp.buf.implementation, "Goto implementation")
+		map("gy", vim.lsp.buf.type_definition, "Goto type definition")
+		map("<leader>cr", vim.lsp.buf.rename, "Rename symbol")
+		map("<leader>ca", vim.lsp.buf.code_action, "Code action")
+	end,
+})
