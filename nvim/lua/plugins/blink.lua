@@ -16,7 +16,17 @@ return {
 			["<Tab>"] = { "snippet_forward", "select_and_accept", "fallback" },
 			["<S-Tab>"] = { "snippet_backward", "fallback" },
 		},
-		sources = { default = { "lsp", "path", "snippets", "buffer" } },
+		sources = {
+			default = { "lazydev", "lsp", "path", "snippets", "buffer" },
+			providers = {
+				-- Module names for `require(...)` / `---@module` in Lua files.
+				lazydev = {
+					name = "LazyDev",
+					module = "lazydev.integrations.blink",
+					score_offset = 100,
+				},
+			},
+		},
 		fuzzy = { implementation = "rust" },
 	},
 }
