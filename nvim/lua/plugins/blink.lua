@@ -35,7 +35,10 @@ return {
 		completion = {
 			documentation = { auto_show = true, auto_show_delay_ms = 150 },
 		},
-		signature = { enabled = true },
+		signature = {
+			enabled = true,
+			window = { show_documentation = true },
+		},
 		fuzzy = { implementation = "rust" },
 	},
 }
