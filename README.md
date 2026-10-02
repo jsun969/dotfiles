@@ -21,13 +21,13 @@ brew install tree-sitter-cli
 brew install fzf ripgrep fd delta chafa
 ```
 
-#### macOS: free the <kbd>⌃</kbd>+<kbd>arrow</kbd> shortcuts
+#### macOS: free the <kbd>⌃</kbd><kbd>arrow</kbd> shortcuts
 
-Window nav/resize uses <kbd>⌃</kbd>+<kbd>←</kbd> <kbd>→</kbd> <kbd>↑</kbd> <kbd>↓</kbd>, but macOS
+Window nav/resize uses <kbd>⌃</kbd><kbd>arrow</kbd>, but macOS
 eats those before nvim sees them.  
 Uncheck in **System Settings → Keyboard → Keyboard Shortcuts… → Mission Control**:
 
-- [ ] Mission Control — <kbd>⌃</kbd>+<kbd>↑</kbd>
-- [ ] Application windows — <kbd>⌃</kbd>+<kbd>↓</kbd>
-- [ ] Move left a space — <kbd>⌃</kbd>+<kbd>←</kbd>
-- [ ] Move right a space — <kbd>⌃</kbd>+<kbd>→</kbd>
+- [ ] Mission Control — <kbd>⌃</kbd><kbd>↑</kbd>
+- [ ] Application windows — <kbd>⌃</kbd><kbd>↓</kbd>
+- [ ] Move left a space — <kbd>⌃</kbd><kbd>←</kbd>
+- [ ] Move right a space — <kbd>⌃</kbd><kbd>→</kbd>
