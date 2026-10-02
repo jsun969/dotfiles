@@ -22,6 +22,8 @@ return {
 			update_root = { enable = false },
 		},
 		filters = {
+			-- show gitignored files
+			git_ignored = false,
 			-- ignore .git folder and .DS_Store
 			custom = { "^\\.git$", "^\\.DS_Store$" },
 		},
