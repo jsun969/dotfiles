@@ -4,5 +4,11 @@
 return {
 	"nvim-mini/mini.pairs",
 	event = "InsertEnter",
-	opts = {},
+	opts = {
+		mappings = {
+			[")"] = false,
+			["]"] = false,
+			["}"] = false,
+		},
+	},
 }
