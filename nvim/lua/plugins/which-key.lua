@@ -4,7 +4,13 @@
 return {
 	"folke/which-key.nvim",
 	event = "VeryLazy",
-	opts = {},
+	opts = {
+		spec = {
+			{ "<leader>s", group = "Search" },
+			{ "<leader>sg", group = "Git" },
+			{ "<leader>sl", group = "LSP" },
+		},
+	},
 	keys = {
 		{
 			"<leader>?",

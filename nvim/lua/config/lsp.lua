@@ -31,7 +31,5 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		map("gD", vim.lsp.buf.declaration, "Goto declaration")
 		map("gI", vim.lsp.buf.implementation, "Goto implementation")
 		map("gy", vim.lsp.buf.type_definition, "Goto type definition")
-		map("<leader>cr", vim.lsp.buf.rename, "Rename symbol")
-		map("<leader>ca", vim.lsp.buf.code_action, "Code action")
 	end,
 })
