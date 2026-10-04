@@ -51,7 +51,7 @@ return {
 		{ "<leader>sj", "<cmd>FzfLua jumps<cr>", desc = "Jumplist" },
 		{ "<leader>sk", "<cmd>FzfLua keymaps<cr>", desc = "Key Maps" },
 		{ "<leader>sL", "<cmd>FzfLua loclist<cr>", desc = "Location List" },
-		{ "<leader>sm", "<cmd>FzfLua marks<cr>", desc = "Jump to Mark" },
+		{ "<leader>sm", "<cmd>FzfLua marks<cr>", desc = "Marks" },
 		{ "<leader>sq", "<cmd>FzfLua quickfix<cr>", desc = "Quickfix List" },
 		{ "<leader>sw", "<cmd>FzfLua grep_cword<cr>", desc = "Word" },
 		{ "<leader>sW", "<cmd>FzfLua grep_visual<cr>", mode = "x", desc = "Selection" },
