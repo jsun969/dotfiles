@@ -37,31 +37,31 @@ return {
 			end, "Previous git hunk")
 
 			-- Stage / reset, normal and visual (line range) variants.
-			map("n", "<leader>hs", gs.stage_hunk, "Stage hunk")
-			map("v", "<leader>hs", function()
+			map("n", "<leader>gs", gs.stage_hunk, "Stage hunk")
+			map("v", "<leader>gs", function()
 				gs.stage_hunk({ vim.fn.line("."), vim.fn.line("v") })
 			end, "Stage hunk (selection)")
-			map("n", "<leader>hr", gs.reset_hunk, "Reset hunk")
-			map("v", "<leader>hr", function()
+			map("n", "<leader>gr", gs.reset_hunk, "Reset hunk")
+			map("v", "<leader>gr", function()
 				gs.reset_hunk({ vim.fn.line("."), vim.fn.line("v") })
 			end, "Reset hunk (selection)")
-			map("n", "<leader>hu", gs.undo_stage_hunk, "Undo stage hunk")
-			map("n", "<leader>hS", gs.stage_buffer, "Stage buffer")
-			map("n", "<leader>hR", gs.reset_buffer, "Reset buffer")
+			map("n", "<leader>gu", gs.undo_stage_hunk, "Undo stage hunk")
+			map("n", "<leader>gS", gs.stage_buffer, "Stage buffer")
+			map("n", "<leader>gR", gs.reset_buffer, "Reset buffer")
 
 			-- Inspect.
-			map("n", "<leader>hp", gs.preview_hunk, "Preview hunk")
-			map("n", "<leader>hb", gs.blame_line, "Blame line")
-			map("n", "<leader>hd", gs.diffthis, "Diff this against index")
-			map("n", "<leader>hD", function()
+			map("n", "<leader>gp", gs.preview_hunk, "Preview hunk")
+			map("n", "<leader>gb", gs.blame_line, "Blame line")
+			map("n", "<leader>gd", gs.diffthis, "Diff this against index")
+			map("n", "<leader>gD", function()
 				gs.diffthis("~")
 			end, "Diff this against last commit")
 
 			-- Toggles.
-			map("n", "<leader>tb", gs.toggle_current_line_blame, "Toggle line blame")
-			map("n", "<leader>tw", gs.toggle_word_diff, "Toggle word diff")
-			map("n", "<leader>ts", gs.toggle_signs, "Toggle signs")
-			map("n", "<leader>td", gs.toggle_deleted, "Toggle deleted lines")
+			map("n", "<leader>gtb", gs.toggle_current_line_blame, "Line blame")
+			map("n", "<leader>gtw", gs.toggle_word_diff, "Word diff")
+			map("n", "<leader>gts", gs.toggle_signs, "Signs")
+			map("n", "<leader>gtd", gs.toggle_deleted, "Deleted lines")
 		end,
 	},
 }
