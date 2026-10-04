@@ -44,10 +44,14 @@ return {
 					return labels
 				end
 
+				local modified = vim.bo[props.buf].modified
+
 				local res = {
 					ft_icon and { " ", ft_icon, " ", guibg = ft_color, guifg = helpers.contrast_color(ft_color) } or "",
 					" ",
-					{ filename, gui = vim.bo[props.buf].modified and "bold,italic" or "bold" },
+					{ filename, gui = modified and "bold,italic" or "bold" },
+					-- Same `●` nvim-tree puts next to unsaved files (same highlight group).
+					modified and { " ●", group = "NvimTreeModifiedIcon" } or "",
 				}
 
 				local changes = git_changes()
@@ -74,6 +78,14 @@ return {
 				vim.defer_fn(function()
 					require("incline").refresh()
 				end, 60)
+			end,
+		})
+
+		-- `BufModifiedSet` is not one of incline's redraw events either, so the dot would
+		-- appear on the first insert-mode exit but linger after `u` back to a saved state.
+		vim.api.nvim_create_autocmd("BufModifiedSet", {
+			callback = function()
+				require("incline").refresh()
 			end,
 		})
 	end,
