@@ -21,6 +21,11 @@ return {
 			-- Keep the tree root at cwd; do not jump it to the file's directory.
 			update_root = { enable = false },
 		},
+		actions = {
+			open_file = {
+				quit_on_open = true,
+			},
+		},
 		filters = {
 			-- show gitignored files
 			git_ignored = false,
