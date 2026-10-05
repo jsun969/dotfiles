@@ -34,6 +34,9 @@ vim.opt.winminwidth = 5
 
 -- one global statusline (lualine) and a quick which-key popup on <C-w>/<leader>
 vim.opt.laststatus = 3
+-- No dedicated command-line row: lualine owns the very bottom line. The cmdline
+-- and messages overdraw that row while active instead of pushing lualine up.
+vim.opt.cmdheight = 0
 vim.opt.timeoutlen = 300
 
 -- Nerd Font octicons for the inline diagnostic prefix (same set as lualine).
