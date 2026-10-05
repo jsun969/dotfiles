@@ -16,8 +16,7 @@ vim.opt.termguicolors = true
 -- integrate w/ system clipboard
 vim.opt.clipboard = "unnamedplus"
 
--- Case-insensitive search and flash.nvim jumps (flash reads 'ignorecase' directly).
--- 'smartcase' makes an uppercase query case-sensitive again, for flash as well as `/`.
+-- Case-insensitive search; 'smartcase' re-enables case-sensitivity for uppercase queries.
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
