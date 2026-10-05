@@ -5,6 +5,10 @@ return {
 	"folke/which-key.nvim",
 	event = "VeryLazy",
 	opts = {
+		triggers = {
+			{ "<auto>", mode = "nxso" },
+			{ "s", mode = "nxo" }, -- mini.surround
+		},
 		spec = {
 			{ "<leader>g", group = "Git" },
 			{ "<leader>gt", group = "Toggle" },
