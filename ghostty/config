@@ -1,6 +1,10 @@
+# Hot Reload: Cmd+Shift+,
+
 font-family = "FiraCode Nerd Font Mono"
 font-family = "PingFang SC"
 font-size = 16
 
 theme = "iTerm2 Smoooooth"
 bold-is-bright = true
+
+macos-option-as-alt = true
