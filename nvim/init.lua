@@ -39,6 +39,9 @@ vim.opt.laststatus = 3
 vim.opt.cmdheight = 0
 vim.opt.timeoutlen = 300
 
+-- New msg/cmdline UI: no hit-enter prompts, so no key gets swallowed.
+require("vim._core.ui2").enable()
+
 -- Nerd Font octicons for the inline diagnostic prefix (same set as lualine).
 local diag_icons = {
 	[vim.diagnostic.severity.ERROR] = "",
