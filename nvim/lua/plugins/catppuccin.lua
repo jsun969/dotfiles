@@ -8,5 +8,7 @@ return {
 	priority = 1000,
 	config = function()
 		vim.cmd.colorscheme("catppuccin-mocha")
+		-- Theme default (crust) is darker than the bg, so the dividers vanish.
+		vim.api.nvim_set_hl(0, "WinSeparator", { link = "NonText" })
 	end,
 }
