@@ -9,7 +9,11 @@ return {
 		-- Resolved at setup (first use), not at spec-scan time, so the plugin stays lazy.
 		local actions = require("fzf-lua").actions
 		return {
-			fzf_colors = true,
+			fzf_colors = {
+				true, -- keep the rest of the theme mapping
+				-- No background band behind the selected row.
+				["bg+"] = { "bg", { "FzfLuaFzfNormal", "Normal" } },
+			},
 			defaults = { formatter = "path.dirname_first" },
 			winopts = { width = 0.8, height = 0.8, row = 0.5, col = 0.5 },
 			files = {
@@ -23,10 +27,16 @@ return {
 			},
 		}
 	end,
-	config = function()
+	config = function(_, opts)
+		local fzf = require("fzf-lua")
+		-- A `config` function suppresses lazy's automatic setup(opts) call.
+		fzf.setup(opts)
 		-- Hand vim.ui.select (LSP code actions, plugin prompts) to fzf-lua.
 		-- Undo at runtime with `:FzfLua deregister_ui_select`.
-		require("fzf-lua").register_ui_select()
+		fzf.register_ui_select()
+		-- Selection bar (pointer; marker/spinner link to it): theme color, not
+		-- the `Special` pink.
+		vim.api.nvim_set_hl(0, "FzfLuaFzfPointer", { link = "Comment" })
 	end,
 	keys = {
 		-- Global picks; `<leader>e` stays nvim-tree, `<leader>f` stays conform.
