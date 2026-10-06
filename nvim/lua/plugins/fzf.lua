@@ -23,6 +23,11 @@ return {
 			},
 		}
 	end,
+	config = function()
+		-- Hand vim.ui.select (LSP code actions, plugin prompts) to fzf-lua.
+		-- Undo at runtime with `:FzfLua deregister_ui_select`.
+		require("fzf-lua").register_ui_select()
+	end,
 	keys = {
 		-- Global picks; `<leader>e` stays nvim-tree, `<leader>f` stays conform.
 		{ "<leader>,", "<cmd>FzfLua buffers sort_mru=true sort_lastused=true<cr>", desc = "Buffers" },
@@ -34,6 +39,7 @@ return {
 		{ "<leader>sgc", "<cmd>FzfLua git_commits<cr>", desc = "Commits" },
 		{ "<leader>sgb", "<cmd>FzfLua git_branches<cr>", desc = "Branches" },
 		{ "<leader>sgS", "<cmd>FzfLua git_stash<cr>", desc = "Stash" },
+		{ "<leader>sgh", "<cmd>FzfLua git_hunks<cr>", desc = "Hunks" },
 		-- lsp
 		{ "<leader>sls", "<cmd>FzfLua lsp_document_symbols<cr>", desc = "Document Symbols" },
 		{ "<leader>slS", "<cmd>FzfLua lsp_live_workspace_symbols<cr>", desc = "Workspace Symbols" },
@@ -44,9 +50,12 @@ return {
 		{ "<leader>slt", "<cmd>FzfLua lsp_typedefs<cr>", desc = "Type Definitions" },
 		{ "<leader>slc", "<cmd>FzfLua lsp_incoming_calls<cr>", desc = "Incoming Calls" },
 		{ "<leader>slC", "<cmd>FzfLua lsp_outgoing_calls<cr>", desc = "Outgoing Calls" },
+		{ "<leader>sla", "<cmd>FzfLua lsp_code_actions<cr>", desc = "Code Actions" },
 		-- search
+		{ "<leader>s/", "<cmd>FzfLua lgrep_curbuf<cr>", desc = "Grep Buffer" },
 		{ "<leader>sb", "<cmd>FzfLua lines<cr>", desc = "Buffer Lines" },
 		{ "<leader>sd", "<cmd>FzfLua diagnostics_document<cr>", desc = "Diagnostics" },
+		{ "<leader>sD", "<cmd>FzfLua diagnostics_workspace<cr>", desc = "Workspace Diagnostics" },
 		{ "<leader>sh", "<cmd>FzfLua help_tags<cr>", desc = "Help" },
 		{ "<leader>sj", "<cmd>FzfLua jumps<cr>", desc = "Jumplist" },
 		{ "<leader>sk", "<cmd>FzfLua keymaps<cr>", desc = "Key Maps" },
