@@ -26,6 +26,10 @@ vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.softtabstop = 4
 
+-- do not break word when wrap, add indent for linebreak
+vim.opt.linebreak = true
+vim.opt.breakindent = true
+
 -- splits open right/below, keep the viewport on split, don't squeeze panes
 vim.opt.splitright = true
 vim.opt.splitbelow = true
