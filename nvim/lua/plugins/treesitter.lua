@@ -9,6 +9,7 @@ local installed = {
 	"json",
 	"toml",
 	"yaml",
+	"just",
 	"rust",
 	"python",
 	"markdown",

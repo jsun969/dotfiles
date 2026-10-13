@@ -19,6 +19,9 @@ brew install tree-sitter-cli
 # C/C++ language server: clangd (Xcode command line tools ship it; `brew install llvm` also works)
 # fzf-lua deps (delta is also the lazygit pager, chafa is optional image preview)
 brew install fzf ripgrep fd delta chafa
+
+# justfile
+brew install just
 ```
 
 #### macOS: free the <kbd>⌃</kbd><kbd>arrow</kbd> shortcuts

@@ -1,4 +1,4 @@
--- Installs LSP servers (lua_ls, ts_ls, eslint, pyright) and CLI tools (stylua, ruff).
+-- Installs LSP servers (lua_ls, ts_ls, eslint, pyright, just-lsp) and CLI tools (stylua, ruff).
 -- pyright comes from npm, so node must be on PATH (mason fetches it via its npm package).
 
 
@@ -11,7 +11,7 @@ return {
 		},
 		opts = {
 			-- lspconfig server names, not mason names
-			ensure_installed = { "lua_ls", "ts_ls", "eslint", "pyright" },
+			ensure_installed = { "lua_ls", "ts_ls", "eslint", "pyright", "just" },
 			-- nvim-lspconfig also ships a `stylua` server; auto-enable would attach it
 			-- next to conform's CLI, so format via conform only.
 			automatic_enable = {

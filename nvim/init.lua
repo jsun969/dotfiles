@@ -83,6 +83,10 @@ vim.api.nvim_create_autocmd("BufEnter", {
 })
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { desc = "Exit terminal input mode" })
 
+-- nvim already maps `justfile`/`.justfile` (any case) to the `just` filetype; only
+-- the `*.just` module files (what `mod foo` in a justfile loads) are missing.
+vim.filetype.add({ extension = { just = "just" } })
+
 -- Window keymaps; see lua/config/keymaps.lua.
 require("config.keymaps")
 

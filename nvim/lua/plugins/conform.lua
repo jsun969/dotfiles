@@ -24,6 +24,9 @@ return {
 			-- falls back to its LLVM style when there is none.
 			c = { "clang-format" },
 			cpp = { "clang-format" },
+			-- conform's builtin `just` formatter rewrites the justfile in place via
+			-- `just --fmt --unstable -f $FILENAME`; just itself is the only formatter.
+			just = { "just" },
 			-- prettier reads the project's .prettierrc* itself (conform resolves
 			-- node_modules/.bin/prettier first, then PATH, i.e. mason's bin).
 			javascript = { "prettier" },
