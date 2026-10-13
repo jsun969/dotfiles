@@ -3,6 +3,7 @@
 font-family = "Monaspace Argon NF"
 font-family = "PingFang SC"
 font-size = 16
+font-feature = ss01, ss02, ss03, ss09, liga, calt
 
 theme = "iTerm2 Smoooooth"
 bold-is-bright = true
