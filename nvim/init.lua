@@ -65,20 +65,13 @@ vim.diagnostic.config({
 	},
 })
 
--- Enter terminal input mode when a terminal opens or is re-entered
--- <Esc> leaves it for Terminal-Normal mode
+-- A newly spawned terminal opens in input mode; revisiting an existing
+-- terminal stays in Terminal-Normal mode, so press `i` to type.
+-- <Esc> leaves input mode for Terminal-Normal mode.
 vim.api.nvim_create_autocmd("TermOpen", {
 	pattern = "*",
 	callback = function()
 		vim.cmd.startinsert()
-	end,
-})
-vim.api.nvim_create_autocmd("BufEnter", {
-	pattern = "term://*",
-	callback = function()
-		if vim.api.nvim_get_mode().mode ~= "t" then
-			vim.cmd.startinsert()
-		end
 	end,
 })
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { desc = "Exit terminal input mode" })
