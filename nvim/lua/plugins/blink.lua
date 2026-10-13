@@ -16,6 +16,21 @@ return {
 			-- VS Code-like: <CR> accepts (newline when the menu is hidden); <Tab> accepts
 			-- too but jumps snippet placeholders first.
 			preset = "enter",
+			-- VS Code's Ctrl+Space: trigger the suggestion list, nothing else. The
+			-- `enter` preset instead cycles menu -> show docs -> hide docs on each
+			-- press (`show_documentation`/`hide_documentation` only run once `show`
+			-- returns false), so override it. No `fallback`: nvim's native <C-space>
+			-- (i_CTRL-@, insert the text you inserted last time you left insert mode)
+			-- stays shadowed, matching VS Code, which never inserts text here. Docs
+			-- still auto-show and page with <C-b>/<C-f>.
+			["<C-space>"] = {
+				function(cmp)
+					if cmp.is_menu_visible() then
+						return true -- already open: triggerSuggest is a no-op, not a docs toggle
+					end
+				end,
+				"show",
+			},
 			["<Tab>"] = { "snippet_forward", "select_and_accept", "fallback" },
 			["<S-Tab>"] = { "snippet_backward", "fallback" },
 			-- <C-j>/<C-k> navigate the menu, as an alias for <C-n>/<C-p> (still bound).
