@@ -10,6 +10,7 @@ local installed = {
 	"toml",
 	"yaml",
 	"rust",
+	"python",
 	"markdown",
 	"diff",
 	-- javascript owns .js/.jsx/.jsx+react; tsx owns .tsx/react; typescript owns .ts

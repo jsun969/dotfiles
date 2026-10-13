@@ -16,6 +16,10 @@ return {
 	opts = {
 		formatters_by_ft = {
 			lua = { "stylua" },
+			-- ruff format reads the project's pyproject.toml / ruff.toml itself and
+			-- falls back to its defaults when there is none. Same binary also ships
+			-- `ruff server`, which mason auto-enables for lint diagnostics.
+			python = { "ruff_format" },
 			-- clang-format reads .clang-format from the file's dir upwards, and
 			-- falls back to its LLVM style when there is none.
 			c = { "clang-format" },
