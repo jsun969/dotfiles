@@ -12,6 +12,10 @@ return {
 		require("blink.cmp").build():pwait()
 	end,
 	opts = {
+		-- No completion in markdown.
+		enabled = function()
+			return vim.bo.filetype ~= "markdown"
+		end,
 		keymap = {
 			-- VS Code-like: <CR> accepts (newline when the menu is hidden); <Tab> accepts
 			-- too but jumps snippet placeholders first.
