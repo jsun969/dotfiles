@@ -27,6 +27,8 @@ return {
 			-- conform's builtin `just` formatter rewrites the justfile in place via
 			-- `just --fmt --unstable -f $FILENAME`; just itself is the only formatter.
 			just = { "just" },
+			-- goimports fixes the import block, then gofumpt applies stricter gofmt.
+			go = { "goimports", "gofumpt" },
 			-- prettier reads the project's .prettierrc* itself (conform resolves
 			-- node_modules/.bin/prettier first, then PATH, i.e. mason's bin).
 			javascript = { "prettier" },

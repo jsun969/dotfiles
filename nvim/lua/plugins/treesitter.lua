@@ -12,6 +12,10 @@ local installed = {
 	"just",
 	"rust",
 	"python",
+	"go",
+	"gomod",
+	"gosum",
+	"gowork",
 	"markdown",
 	"diff",
 	-- javascript owns .js/.jsx/.jsx+react; tsx owns .tsx/react; typescript owns .ts
