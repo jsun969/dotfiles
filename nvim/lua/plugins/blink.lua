@@ -1,5 +1,7 @@
 -- Completion menu (LSP/buffer/path/snippets) + snippets.
 
+-- Filetypes with completion off.
+local disabled_filetypes = { "markdown", "oil" }
 
 return {
 	"saghen/blink.cmp",
@@ -12,9 +14,8 @@ return {
 		require("blink.cmp").build():pwait()
 	end,
 	opts = {
-		-- No completion in markdown.
 		enabled = function()
-			return vim.bo.filetype ~= "markdown"
+			return not vim.tbl_contains(disabled_filetypes, vim.bo.filetype)
 		end,
 		keymap = {
 			-- VS Code-like: <CR> accepts (newline when the menu is hidden); <Tab> accepts

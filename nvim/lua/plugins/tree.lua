@@ -15,6 +15,9 @@ return {
 		vim.g.loaded_netrwPlugin = 1
 	end,
 	opts = {
+		-- Let oil.nvim handle directory buffers (`nvim .`).
+		hijack_netrw = false,
+		hijack_directories = { enable = false },
 		-- Expand the tree to the focused file on BufEnter (e.g. after fzf-lua opens it).
 		update_focused_file = {
 			enable = true,
