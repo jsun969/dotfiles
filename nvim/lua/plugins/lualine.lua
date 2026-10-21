@@ -14,6 +14,7 @@ return {
 			lualine_a = { "mode" },
 			lualine_b = { "branch" },
 			lualine_c = {
+				{ "filename", path = 3 },
 				-- Nerd Font octicons: x-circle / alert / info / light-bulb.
 				{
 					"diagnostics",
