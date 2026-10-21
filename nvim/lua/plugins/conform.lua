@@ -29,15 +29,25 @@ return {
 			just = { "just" },
 			-- goimports fixes the import block, then gofumpt applies stricter gofmt.
 			go = { "goimports", "gofumpt" },
-			-- prettier reads the project's .prettierrc* itself (conform resolves
-			-- node_modules/.bin/prettier first, then PATH, i.e. mason's bin).
-			javascript = { "prettier" },
-			javascriptreact = { "prettier" },
-			typescript = { "prettier" },
-			typescriptreact = { "prettier" },
-			vue = { "prettier" },
-			css = { "prettier" },
-			scss = { "prettier" },
+			-- oxfmt when the project has an oxfmt config, else prettier (which reads
+			-- .prettierrc* itself). conform resolves node_modules/.bin first, then
+			-- PATH, i.e. mason's bin.
+			javascript = { "oxfmt", "prettier", stop_after_first = true },
+			javascriptreact = { "oxfmt", "prettier", stop_after_first = true },
+			typescript = { "oxfmt", "prettier", stop_after_first = true },
+			typescriptreact = { "oxfmt", "prettier", stop_after_first = true },
+			vue = { "oxfmt", "prettier", stop_after_first = true },
+			css = { "oxfmt", "prettier", stop_after_first = true },
+			scss = { "oxfmt", "prettier", stop_after_first = true },
+		},
+		formatters = {
+			-- conform's builtin oxfmt has no condition, so it would win everywhere;
+			-- only use it when an oxfmt config sits above the file.
+			oxfmt = {
+				condition = function(_, ctx)
+					return vim.fs.root(ctx.dirname, { ".oxfmtrc.json", ".oxfmtrc.jsonc", "oxfmt.config.ts" }) ~= nil
+				end,
+			},
 		},
 	},
 }
