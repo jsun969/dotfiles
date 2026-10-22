@@ -1,0 +1,5 @@
+- Never `rm`; move files to the trash (`trash <path>`).
+- Never use em dashes.
+- Pick the technically best solution; ignore cost.
+- Ask for explicit approval before installing global dependencies (Homebrew, `npm -g`, `pip` outside a venv, etc.).
+- UI: skip unnecessary secondary labels and descriptions; let the layout explain.
