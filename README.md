@@ -5,7 +5,7 @@
 - `nvim` -> `~/.config/nvim`
 - `ghostty` -> `~/.config/ghostty`
 - `lazygit/config.yml` -> `~/Library/Application Support/lazygit/config.yml`
-- `ai/AGENTS.md` -> `~/AGENTS.md`
+- `ai/AGENTS.md` -> `~/.agents/AGENTS.md`
 
 ## Prerequisites
 
