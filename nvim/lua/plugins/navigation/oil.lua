@@ -5,13 +5,6 @@ return {
 	lazy = false,
 	keys = {
 		{ "-", "<cmd>Oil<cr>", desc = "Open parent directory (oil)" },
-		{
-			"<leader>o",
-			function()
-				require("oil").open(vim.fn.getcwd())
-			end,
-			desc = "Oil",
-		},
 	},
 	dependencies = {
 		"nvim-tree/nvim-web-devicons",
