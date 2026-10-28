@@ -1,5 +1,6 @@
 - Never `rm`; move files to the trash (`trash <path>`).
-- Never use em dashes.
+- Shell search: use `fd` instead of `find` and `rg` instead of `grep` when installed.
+- Never use em dashes (—) or middle dots (·).
 - Pick the technically best solution; ignore cost.
 - Ask for explicit approval before installing global dependencies (Homebrew, `npm -g`, `pip` outside a venv, etc.).
 - UI: skip unnecessary secondary labels and descriptions; let the layout explain.
