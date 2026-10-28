@@ -39,6 +39,8 @@ return {
 			vue = { "oxfmt", "prettier", stop_after_first = true },
 			css = { "oxfmt", "prettier", stop_after_first = true },
 			scss = { "oxfmt", "prettier", stop_after_first = true },
+			json = { "oxfmt", "prettier", stop_after_first = true },
+			jsonc = { "oxfmt", "prettier", stop_after_first = true },
 		},
 		formatters = {
 			-- conform's builtin oxfmt has no condition, so it would win everywhere;
