@@ -1,5 +1,6 @@
 - Never `rm`; move files to the trash (`trash <path>`).
 - Shell search: use `fd` instead of `find` and `rg` instead of `grep` when installed.
+- Temporary files/dirs: create a scratch dir with `mktemp -d` instead of hardcoding paths like `/tmp/foo`.
 - Never use em dashes (—) or middle dots (·).
 - Pick the technically best solution; ignore cost.
 - Ask for explicit approval before installing global dependencies (Homebrew, `npm -g`, `pip` outside a venv, etc.).
