@@ -29,6 +29,7 @@ return {
 			just = { "just" },
 			-- goimports fixes the import block, then gofumpt applies stricter gofmt.
 			go = { "goimports", "gofumpt" },
+			typst = { "typstyle" },
 			-- oxfmt when the project has an oxfmt config, else prettier (which reads
 			-- .prettierrc* itself). conform resolves node_modules/.bin first, then
 			-- PATH, i.e. mason's bin.

@@ -1,4 +1,4 @@
--- Installs LSP servers (lua_ls, ts_ls, eslint, oxlint, pyright, just-lsp, gopls) and CLI tools (stylua, ruff, goimports, gofumpt).
+-- Installs LSP servers (lua_ls, ts_ls, eslint, oxlint, pyright, just-lsp, gopls, tinymist) and CLI tools (stylua, ruff, goimports, gofumpt, typstyle).
 -- eslint and oxlint only attach in projects that configure them (eslint.config.* / .eslintrc*,
 -- .oxlintrc.json / oxlint in package.json), so each repo picks its own linter.
 -- pyright comes from npm, so node must be on PATH (mason fetches it via its npm package).
@@ -13,7 +13,7 @@ return {
 		},
 		opts = {
 			-- lspconfig server names, not mason names
-			ensure_installed = { "lua_ls", "ts_ls", "eslint", "oxlint", "pyright", "just", "gopls" },
+			ensure_installed = { "lua_ls", "ts_ls", "eslint", "oxlint", "pyright", "just", "gopls", "tinymist" },
 			-- nvim-lspconfig also ships a `stylua` server; auto-enable would attach it
 			-- next to conform's CLI, so format via conform only.
 			automatic_enable = {
@@ -37,6 +37,7 @@ return {
 				"ruff",
 				"goimports",
 				"gofumpt",
+				"typstyle",
 			},
 		},
 		config = function(_, opts)

@@ -18,6 +18,7 @@ local installed = {
 	"gowork",
 	"markdown",
 	"diff",
+	"typst",
 	-- javascript owns .js/.jsx/.jsx+react; tsx owns .tsx/react; typescript owns .ts
 	"javascript",
 	"typescript",
