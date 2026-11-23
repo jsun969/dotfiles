@@ -1,7 +1,4 @@
 -- LSP servers that mason does not manage.
--- clangd ships with the Xcode command line tools (brew llvm also provides it, and
--- that copy wins on PATH), so there is nothing to install -- just configure and
--- enable it. nvim-lspconfig supplies the base client config.
 vim.lsp.config("clangd", {
 	-- LazyVim's flags: background index, clang-tidy diagnostics, IWYU include
 	-- fixes, detailed completion, llvm style when there are no project flags.
@@ -17,6 +14,23 @@ vim.lsp.config("clangd", {
 })
 
 vim.lsp.enable("clangd")
+
+-- nixd: completion for nixpkgs and home-manager options from the dotfiles flake.
+local dotfiles = vim.fs.dirname(vim.fs.normalize(vim.fn.resolve(vim.fn.stdpath("config"))))
+local hm_flake = vim.fs.joinpath(dotfiles, "nix", "home-manager")
+local get_flake = ('(builtins.getFlake "%s")'):format(hm_flake)
+vim.lsp.config("nixd", {
+	settings = {
+		nixd = {
+			nixpkgs = { expr = ("import %s.inputs.nixpkgs { }"):format(get_flake) },
+			options = {
+				home_manager = { expr = ("%s.homeConfigurations.deck.options"):format(get_flake) },
+			},
+		},
+	},
+})
+
+vim.lsp.enable("nixd")
 
 -- nvim only ships the `gr*` LSP defaults, so hover and goto need keys. Buffer
 -- local, set on attach, so they never shadow `K`/`gd` in buffers without a server.

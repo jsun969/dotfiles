@@ -30,6 +30,8 @@ return {
 			-- goimports fixes the import block, then gofumpt applies stricter gofmt.
 			go = { "goimports", "gofumpt" },
 			typst = { "typstyle" },
+			-- official RFC 166 style
+			nix = { "nixfmt" },
 			-- oxfmt when the project has an oxfmt config, else prettier (which reads
 			-- .prettierrc* itself). conform resolves node_modules/.bin first, then
 			-- PATH, i.e. mason's bin.

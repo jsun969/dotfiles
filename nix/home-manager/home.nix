@@ -33,6 +33,13 @@
     tree-sitter
     bat
     lsd
+    neovim
+    gcc
+    clang-tools
+	cargo
+	rustc
+    nixd
+    nixfmt
   ];
     
 
@@ -68,7 +75,7 @@
   #  /etc/profiles/per-user/deck/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    # EDITOR = "emacs";
+    EDITOR = "nvim";
   };
 
   programs.git = {

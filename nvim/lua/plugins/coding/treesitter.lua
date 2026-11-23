@@ -19,6 +19,7 @@ local installed = {
 	"markdown",
 	"diff",
 	"typst",
+	"nix",
 	-- javascript owns .js/.jsx/.jsx+react; tsx owns .tsx/react; typescript owns .ts
 	"javascript",
 	"typescript",
