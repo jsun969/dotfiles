@@ -40,6 +40,7 @@
 	rustc
     nixd
     nixfmt
+	gnumake
   ];
     
 
