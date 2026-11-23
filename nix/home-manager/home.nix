@@ -15,12 +15,24 @@
   # release notes.
   home.stateVersion = "26.05"; # Please read the comment before changing.
 
+  # Recommend enable for non-NixOS
+  targets.genericLinux.enable = true;
+
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
     gh
     fastfetch
     lazygit
+    fzf
+    ripgrep
+    fd
+    delta
+    chafa
+    just
+    tree-sitter
+    bat
+    lsd
   ];
     
 
@@ -63,6 +75,11 @@
     enable = true;
     settings.user.name = "jsun969";
     settings.user.email = "i@jsun.lol";
+  };
+
+  programs.direnv = {
+    enable = true;
+    nix-direnv.enable = true;
   };
 
   # Let Home Manager install and manage itself.
