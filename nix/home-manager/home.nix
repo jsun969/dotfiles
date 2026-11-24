@@ -76,6 +76,10 @@
 	#
 	#  /etc/profiles/per-user/deck/etc/profile.d/hm-session-vars.sh
 	#
+	home.sessionPath = [
+		"$HOME/.local/bin"
+	];
+
 	home.sessionVariables = {
 		EDITOR = "nvim";
 	};
@@ -91,7 +95,6 @@
 		enableCompletion = true;
 		autosuggestion.enable = true;
 		syntaxHighlighting.enable = true;
-
 		shellAliases = {
 			ls = "lsd";
 		};

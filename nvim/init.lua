@@ -16,6 +16,9 @@ vim.opt.termguicolors = true
 -- integrate w/ system clipboard
 vim.opt.clipboard = "unnamedplus"
 
+-- zsh for :terminal and :!, even when the login shell is bash
+vim.opt.shell = "zsh"
+
 -- Case-insensitive search; 'smartcase' re-enables case-sensitivity for uppercase queries.
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
