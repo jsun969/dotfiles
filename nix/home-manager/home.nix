@@ -111,6 +111,15 @@
 		nix-direnv.enable = true;
 	};
 
+	programs.herdr = {
+		enable = true;
+		mutableSettings = true;
+		settings = {
+			onboarding = false;
+			terminal.default_shell = "zsh";
+		};
+	};
+
 	# Let Home Manager install and manage itself.
 	programs.home-manager.enable = true;
 }
