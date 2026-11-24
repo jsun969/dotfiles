@@ -39,7 +39,7 @@
 	cargo
 	rustc
     nixd
-    nixfmt
+    alejandra
 	gnumake
   ];
     
