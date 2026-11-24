@@ -84,10 +84,19 @@
 		EDITOR = "nvim";
 	};
 
+	programs.gpg.enable = true;
+	services.gpg-agent.enable = true;
 	programs.git = {
 		enable = true;
-		settings.user.name = "jsun969";
-		settings.user.email = "i@jsun.lol";
+		settings.user = {
+			name = "jsun969";
+			email = "i@jsun.lol";
+		};
+		signing = {
+			key = "09BB20230969D665";
+			format = "openpgp";
+			signByDefault = true;
+		};
 	};
 
 	programs.zsh = {
@@ -106,11 +115,6 @@
 		enableZshIntegration = true;
 	};
 
-	programs.direnv = {
-		enable = true;
-		nix-direnv.enable = true;
-	};
-
 	programs.herdr = {
 		enable = true;
 		mutableSettings = true;
@@ -118,6 +122,11 @@
 			onboarding = false;
 			terminal.default_shell = "zsh";
 		};
+	};
+
+	programs.direnv = {
+		enable = true;
+		nix-direnv.enable = true;
 	};
 
 	# Let Home Manager install and manage itself.
