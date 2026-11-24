@@ -32,6 +32,18 @@ vim.lsp.config("nixd", {
 
 vim.lsp.enable("nixd")
 
+-- rust-analyzer from PATH (rustup component, distro or nix package), so it
+-- matches the installed toolchain; clippy on save.
+vim.lsp.config("rust_analyzer", {
+	settings = {
+		["rust-analyzer"] = {
+			check = { command = "clippy" },
+		},
+	},
+})
+
+vim.lsp.enable("rust_analyzer")
+
 -- nvim only ships the `gr*` LSP defaults, so hover and goto need keys. Buffer
 -- local, set on attach, so they never shadow `K`/`gd` in buffers without a server.
 vim.api.nvim_create_autocmd("LspAttach", {

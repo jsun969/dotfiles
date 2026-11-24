@@ -40,6 +40,9 @@
 		clang-tools
 		cargo
 		rustc
+		rust-analyzer
+		rustfmt
+		clippy
 		nixd
 		alejandra
 		gnumake
@@ -82,6 +85,7 @@
 
 	home.sessionVariables = {
 		EDITOR = "nvim";
+		RUST_SRC_PATH = "${pkgs.rustPlatform.rustLibSrc}";
 	};
 
 	programs.gpg.enable = true;

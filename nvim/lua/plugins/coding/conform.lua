@@ -30,6 +30,8 @@ return {
 			-- goimports fixes the import block, then gofumpt applies stricter gofmt.
 			go = { "goimports", "gofumpt" },
 			typst = { "typstyle" },
+			-- rustfmt reads rustfmt.toml and conform passes the Cargo.toml edition.
+			rust = { "rustfmt" },
 			-- reads alejandra.toml from the cwd (repo root), e.g. tabs in dotfiles
 			nix = { "alejandra" },
 			-- oxfmt when the project has an oxfmt config, else prettier (which reads
