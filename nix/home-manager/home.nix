@@ -25,19 +25,22 @@
 	# The home.packages option allows you to install Nix packages into your
 	# environment.
 	home.packages = with pkgs; [
-		gh
+		# Utils
 		fastfetch
-		lazygit
-		fzf
-		ripgrep
-		fd
-		delta
-		chafa
-		just
-		tree-sitter
 		bat
 		lsd
+		duf
+		ripgrep
+		fd
+		fzf
+		chafa
+		# Dev
+		gh
+		lazygit
+		delta
 		neovim
+		just
+		tree-sitter
 		gcc
 		clang-tools
 		cargo
@@ -48,8 +51,8 @@
 		nixd
 		alejandra
 		gnumake
-		nerd-fonts.monaspace
-		duf
+		# Font
+		monaspace
 	];
 
 	# Home Manager is pretty good at managing dotfiles. The primary way to manage
