@@ -37,7 +37,7 @@ return {
 			end, "Previous git hunk")
 
 			-- Stage / reset, normal and visual (line range) variants.
-			map("n", "<leader>gs", gs.stage_hunk, "Stage hunk")
+			map("n", "<leader>gs", gs.stage_hunk, "Stage/unstage hunk")
 			map("v", "<leader>gs", function()
 				gs.stage_hunk({ vim.fn.line("."), vim.fn.line("v") })
 			end, "Stage hunk (selection)")
@@ -45,12 +45,12 @@ return {
 			map("v", "<leader>gr", function()
 				gs.reset_hunk({ vim.fn.line("."), vim.fn.line("v") })
 			end, "Reset hunk (selection)")
-			map("n", "<leader>gu", gs.undo_stage_hunk, "Undo stage hunk")
 			map("n", "<leader>gS", gs.stage_buffer, "Stage buffer")
 			map("n", "<leader>gR", gs.reset_buffer, "Reset buffer")
 
 			-- Inspect.
 			map("n", "<leader>gp", gs.preview_hunk, "Preview hunk")
+			map("n", "<leader>gP", gs.preview_hunk_inline, "Preview hunk inline")
 			map("n", "<leader>gb", gs.blame_line, "Blame line")
 			map("n", "<leader>gd", gs.diffthis, "Diff this against index")
 			map("n", "<leader>gD", function()
@@ -61,7 +61,6 @@ return {
 			map("n", "<leader>gtb", gs.toggle_current_line_blame, "Line blame")
 			map("n", "<leader>gtw", gs.toggle_word_diff, "Word diff")
 			map("n", "<leader>gts", gs.toggle_signs, "Signs")
-			map("n", "<leader>gtd", gs.toggle_deleted, "Deleted lines")
 		end,
 	},
 }

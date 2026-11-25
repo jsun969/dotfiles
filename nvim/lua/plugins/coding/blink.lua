@@ -9,9 +9,9 @@ return {
 	dependencies = {
 		"saghen/blink.lib",
 	},
-	-- builds the rust fuzzy matcher; use :Lazy gb to rebuild
+	-- builds the rust fuzzy matcher; use :Lazy gb to rebuild. `wait` surfaces build errors.
 	build = function()
-		require("blink.cmp").build():pwait()
+		require("blink.cmp").build():wait()
 	end,
 	opts = {
 		enabled = function()
@@ -89,6 +89,5 @@ return {
 			enabled = true,
 			window = { show_documentation = true },
 		},
-		fuzzy = { implementation = "rust" },
 	},
 }
