@@ -20,6 +20,8 @@
 	# Recommend enable for non-NixOS
 	targets.genericLinux.enable = true;
 
+	fonts.fontconfig.enable = true;
+
 	# The home.packages option allows you to install Nix packages into your
 	# environment.
 	home.packages = with pkgs; [
@@ -46,6 +48,7 @@
 		nixd
 		alejandra
 		gnumake
+		nerd-fonts.monaspace
 	];
 
 	# Home Manager is pretty good at managing dotfiles. The primary way to manage
