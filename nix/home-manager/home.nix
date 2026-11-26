@@ -1,5 +1,6 @@
 {
 	config,
+	lib,
 	pkgs,
 	...
 }: {
@@ -142,6 +143,23 @@
 			onboarding = false;
 			terminal.default_shell = "zsh";
 		};
+	};
+
+	i18n.inputMethod = {
+		enable = true;
+		type = "fcitx5";
+		fcitx5 = {
+			systemd.enable = false; # KWin starts Fcitx5, not nix 
+			waylandFrontend = true;
+			addons = with pkgs; [
+				qt6Packages.fcitx5-chinese-addons
+				(fcitx5-rime.override {rimeDataPkgs = [rime-data rime-ice];})
+			];
+		};
+	};
+	# Use rime-ice's recommended defaults
+	xdg.dataFile."fcitx5/rime/default.custom.yaml".text = lib.generators.toYAML {} {
+		patch."__include" = "rime_ice_suggestion:/";
 	};
 
 	programs.nh = {
