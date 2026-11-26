@@ -149,7 +149,7 @@
 		enable = true;
 		type = "fcitx5";
 		fcitx5 = {
-			systemd.enable = false; # KWin starts Fcitx5, not nix 
+			systemd.enable = false; # KWin starts Fcitx5, not nix
 			waylandFrontend = true;
 			addons = with pkgs; [
 				qt6Packages.fcitx5-chinese-addons
@@ -158,9 +158,10 @@
 		};
 	};
 	# Use rime-ice's recommended defaults
-	xdg.dataFile."fcitx5/rime/default.custom.yaml".text = lib.generators.toYAML {} {
-		patch."__include" = "rime_ice_suggestion:/";
-	};
+	xdg.dataFile."fcitx5/rime/default.custom.yaml".text =
+		lib.generators.toYAML {} {
+			patch."__include" = "rime_ice_suggestion:/";
+		};
 
 	programs.nh = {
 		enable = true;
