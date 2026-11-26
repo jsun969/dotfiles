@@ -9,3 +9,5 @@ theme = "iTerm2 Smoooooth"
 bold-is-bright = true
 
 macos-option-as-alt = true
+
+command = zsh
