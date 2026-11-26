@@ -79,6 +79,15 @@ vim.api.nvim_create_autocmd("TermOpen", {
 })
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { desc = "Exit terminal input mode" })
 
+-- Enter / o / O never continue a comment; filetype plugins re-add these, so
+-- strip them per buffer.
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "*",
+	callback = function()
+		vim.opt_local.formatoptions:remove({ "r", "o" })
+	end,
+})
+
 -- nvim already maps `justfile`/`.justfile` (any case) to the `just` filetype; only
 -- the `*.just` module files (what `mod foo` in a justfile loads) are missing.
 vim.filetype.add({ extension = { just = "just" } })
