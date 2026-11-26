@@ -20,6 +20,14 @@
 	# Recommend enable for non-NixOS
 	targets.genericLinux.enable = true;
 
+	# systemd --user starts before XDG_DATA_DIRS includes the Nix profile, so it never
+	# sees units shipped by packages (e.g. Ghostty's D-Bus-activated app unit).
+	# Link them into ~/.local/share/systemd/user, which systemd always searches.
+	xdg.dataFile."systemd/user" = {
+		source = "${config.home.path}/share/systemd/user";
+		recursive = true;
+	};
+
 	fonts.fontconfig.enable = true;
 
 	# The home.packages option allows you to install Nix packages into your
@@ -51,6 +59,7 @@
 		nixd
 		alejandra
 		gnumake
+		ghostty
 		# Font
 		monaspace
 	];
