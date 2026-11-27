@@ -1,13 +1,17 @@
 {
-	config,
 	lib,
 	pkgs,
 	...
 }: {
+	imports = [./steamos.nix];
+
 	# Home Manager needs a bit of information about you and the paths it should
 	# manage.
 	home.username = "deck";
 	home.homeDirectory = "/home/deck";
+
+	# Recommend enable for non-NixOS
+	targets.genericLinux.enable = true;
 
 	# This value determines the Home Manager release that your configuration is
 	# compatible with. This helps avoid breakage when a new Home Manager release
@@ -17,17 +21,6 @@
 	# want to update the value, then make sure to first check the Home Manager
 	# release notes.
 	home.stateVersion = "26.05"; # Please read the comment before changing.
-
-	# Recommend enable for non-NixOS
-	targets.genericLinux.enable = true;
-
-	# systemd --user starts before XDG_DATA_DIRS includes the Nix profile, so it never
-	# sees units shipped by packages (e.g. Ghostty's D-Bus-activated app unit).
-	# Link them into ~/.local/share/systemd/user, which systemd always searches.
-	xdg.dataFile."systemd/user" = {
-		source = "${config.home.path}/share/systemd/user";
-		recursive = true;
-	};
 
 	fonts.fontconfig.enable = true;
 
@@ -142,6 +135,19 @@
 		settings = {
 			onboarding = false;
 			terminal.default_shell = "zsh";
+		};
+	};
+
+	programs.zellij = {
+		enable = true;
+		settings = {
+			theme = "catppuccin-mocha";
+			default_shell = "zsh";
+			show_startup_tips = false;
+			keybinds._props = {
+				preset = "unlock-first";
+				unlock = "Ctrl Space";
+			};
 		};
 	};
 
