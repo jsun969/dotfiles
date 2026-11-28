@@ -138,19 +138,6 @@
 		};
 	};
 
-	programs.zellij = {
-		enable = true;
-		settings = {
-			theme = "catppuccin-mocha";
-			default_shell = "zsh";
-			show_startup_tips = false;
-			keybinds._props = {
-				preset = "unlock-first";
-				unlock = "Ctrl Space";
-			};
-		};
-	};
-
 	i18n.inputMethod = {
 		enable = true;
 		type = "fcitx5";
