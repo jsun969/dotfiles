@@ -38,6 +38,8 @@ vim.lsp.config("rust_analyzer", {
 	settings = {
 		["rust-analyzer"] = {
 			check = { command = "clippy" },
+			-- complete fns as `foo(|)` instead of filling in arg-name placeholders
+			completion = { callable = { snippets = "add_parentheses" } },
 		},
 	},
 })
